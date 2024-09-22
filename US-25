@@ -1,0 +1,12 @@
+Feature: Eliminar veterinaria
+  Como veterinario/a o personal autorizado, quiero poder eliminar la información de la clínica veterinaria si ya no es necesaria.
+
+  Scenario Outline: Eliminación exitosa de la veterinaria
+    Given el usuario está autenticado como veterinario/a o personal autorizado
+    When selecciona la opción de eliminar la veterinaria
+    Then la aplicación elimina todos los datos y muestra un mensaje de confirmación
+
+  Scenario Outline: Confirmación de la eliminación
+    Given el usuario es veterinario/a o personal autorizado
+    When intenta ingresar con credenciales inexistentes
+    Then la aplicación muestra un mensaje de que la cuenta y datos han sido eliminados
