@@ -1,0 +1,16 @@
+Feature: Añadir ubicación
+
+  Scenario Outline: Registro de ubicación de veterinaria
+    Given el usuario está autenticado como veterinario/a o personal autorizado
+    When selecciona la opción de añadir ubicación
+    Then la aplicación muestra un mapa para elegir la ubicación
+
+  Scenario Outline: Intento de añadir ubicación sin autorización
+    Given el usuario no está autenticado como veterinario/a o personal autorizado
+    When intenta añadir la ubicación
+    Then la aplicación muestra un mensaje de error indicando que la función es solo para personal autorizado
+
+  Scenario Outline: Actualización de ubicación existente
+    Given el usuario está autenticado como veterinario/a o personal autorizado
+    When necesita actualizar la ubicación
+    Then la aplicación permite editar la ubicación existente y guarda los cambios
