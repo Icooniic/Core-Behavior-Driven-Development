@@ -1,0 +1,16 @@
+Feature: Registrar resultados
+
+  Scenario Outline: Registro de resultados exitoso
+    Given el usuario está autenticado en la aplicación como veterinario/a o personal autorizado
+    When se obtienen los resultados de análisis de una mascota
+    Then el usuario registra los datos del resultado en el historial médico de la mascota, incluyendo el nombre de los exámenes tomados, fecha de análisis, descripción y cualquier otra información relevante
+  
+  Scenario Outline: Validación de datos de resultado
+    Given el usuario está autenticado en la aplicación como veterinario/a o personal autorizado
+    When se intenta registrar los resultados, pero faltan datos obligatorios
+    Then la aplicación muestra un mensaje de error indicando los datos que faltan y no permite el registro hasta que se completen
+  
+  Scenario Outline: Adición de resultados al historial médico
+    Given el usuario está autenticado en la aplicación como veterinario/a o personal autorizado
+    When el usuario tiene los resultados registrados y quiere agregarlos al historial médico
+    Then la aplicación muestra una opción de añadir el registro resultado al historial médico del paciente correspondiente
