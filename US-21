@@ -1,0 +1,11 @@
+Feature: Visualización de perfil de veterinarias
+
+  Scenario Outline: Visualización de perfil de la veterinaria
+    Given el usuario está autenticado como propietario/a en la versión gratuita o suscrito
+    When desea visualizar el perfil de una veterinaria
+    Then la aplicación carga el perfil completo, que incluye nombre, reseñas, servicios, dirección y horarios de atención
+
+  Scenario Outline: Ver información detallada de la veterinaria con filtros de búsqueda
+    Given el usuario está autenticado como propietario/a en la versión gratuita o suscrito
+    When desea visualizar el perfil con preferencias específicas (especialidades)
+    Then la aplicación permite aplicar filtros de búsqueda para mostrar veterinarias que cumplan con los criterios
