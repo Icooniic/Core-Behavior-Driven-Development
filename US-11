@@ -1,0 +1,16 @@
+Feature: Registrar cirugías
+
+  Scenario Outline: Registro de reporte quirúrgico exitoso
+    Given el usuario está autenticado en la aplicación como veterinario/a o personal autorizado
+    When se interviene a un paciente, y se registra el reporte quirúrgico de una mascota
+    Then el usuario registra los datos del reporte en el historial médico de la mascota, incluyendo el nombre del proceso realizado, fecha de operación, descripción y cualquier otra información relevante
+
+  Scenario Outline: Validación de datos del reporte
+    Given el usuario está autenticado en la aplicación como veterinario/a o personal autorizado
+    When se intenta registrar los datos del reporte, pero faltan datos obligatorios
+    Then la aplicación muestra un mensaje de error indicando los datos que faltan y no permite el registro hasta que se completen
+  
+  Scenario Outline: Adición de resultados de cirugía al historial médico
+    Given el usuario está autenticado en la aplicación como veterinario/a o personal autorizado
+    When el usuario tiene los resultados registrados de la cirugía y quiere agregarlos al historial médico
+    Then la aplicación muestra una opción de añadir el registro del resultado al historial médico del paciente correspondiente
