@@ -1,4 +1,5 @@
 Feature: Suscribirse a un plan
+Como propietario/a de mascota sin suscripción, quiero poder suscribirme a los planes disponibles de suscripción, para obtener los beneficios de la versión de pago.
 
   Scenario Outline: Suscripción a un plan de pago exitoso
     Given el usuario está en la versión gratuita de la aplicación como propietario/a de mascota sin suscripción
