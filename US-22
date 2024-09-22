@@ -1,4 +1,5 @@
 Feature: Añadir ubicación
+  Como veterinario/a o personal autorizado, quiero añadir la ubicación de mi clínica veterinaria para que los propietarios puedan encontrarme fácilmente.
 
   Scenario Outline: Registro de ubicación de veterinaria
     Given el usuario está autenticado como veterinario/a o personal autorizado
