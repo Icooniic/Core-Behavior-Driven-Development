@@ -1,4 +1,5 @@
 Feature: Ver detalles de cada veterinaria
+Como propietario/a o autenticado y suscrito a un plan, quiero poder visualizar la información de cada veterinaria, para poder elegir con mayor eficaz la veterinaria acorde a mis necesidades  
 
   Scenario Outline: Visualización de detalles de veterinaria
     Given el usuario está autenticado como propietario/a en la versión gratuita o suscrito en la aplicación
