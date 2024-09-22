@@ -1,0 +1,17 @@
+Feature: Endpoint Pet
+  Como propietario de una mascota, quiero gestionar la información de mis mascotas a través de la API para mantener un registro organizado.
+
+  Scenario Outline: Crear una nueva mascota
+    Given acceso a la API de mascotas
+    When se envía una solicitud POST con los detalles de la nueva mascota y el ID del propietario
+    Then el sistema crea la mascota y responde con un código 201 si es exitoso; si el propietario no existe, devuelve un código 404
+
+  Scenario Outline: Obtener todas las mascotas
+    Given acceso a la API de mascotas
+    When se envía una solicitud GET
+    Then el sistema devuelve una lista con todas las mascotas existentes con un código 200; si no hay mascotas, devuelve una lista vacía
+
+  Scenario Outline: Obtener mascotas por ID de propietario
+    Given acceso a la API de mascotas
+    When se envía una solicitud GET con el ID del propietario
+    Then el sistema devuelve una lista de mascotas del propietario con un código 200; si el propietario no existe o no tiene mascotas, devuelve un código 404
