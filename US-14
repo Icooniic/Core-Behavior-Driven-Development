@@ -1,0 +1,12 @@
+Feature: Ver planes disponibles de suscripción
+
+  Scenario Outline: Visualización de los planes de suscripción
+    Given el usuario está en la versión gratuita de la aplicación como propietario/a de mascota sin suscripción
+    When el usuario requiere la información de los planes a los que puede acceder
+    Then el usuario obtiene la información sobre los beneficios de los planes de suscripción
+
+  Scenario Outline: Acceso al detalle de un plan de suscripción
+    Given el usuario está en la versión gratuita de la aplicación como propietario/a de mascota sin suscripción
+    When el usuario requiere la información más detallada de un plan que se ajuste a sus necesidades
+    Then el usuario obtiene información más detallada sobre los beneficios del plan seleccionado
+
