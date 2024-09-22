@@ -1,0 +1,11 @@
+Feature: Cancelar plan
+
+  Scenario Outline: Cancelación del plan actual
+    Given el usuario está autenticado en la aplicación como propietario/a suscrito
+    When desea cancelar la versión de su plan actual y no acceder a mayores beneficios de la aplicación
+    Then el usuario completa un formulario para realizar la desafiliación y su cuenta queda registrada con la versión gratuita
+
+  Scenario Outline: Validación de los datos del formulario
+    Given el usuario está autenticado en la aplicación como propietario/a suscrito
+    When el usuario quiere completar el formulario para desafiliarse de su plan, pero los datos no son llenados correctamente
+    Then el sistema muestra un mensaje indicando que hubo un error en el procedimiento
