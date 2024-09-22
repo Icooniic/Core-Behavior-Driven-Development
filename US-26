@@ -1,0 +1,17 @@
+Feature: Endpoint Medical History
+  Como administrador de la aplicación, quiero gestionar el historial médico de las mascotas para mantener un registro completo de su salud.
+
+  Scenario Outline: Crear una nueva enfermedad
+    Given acceso a la API de gestión del historial médico
+    When se envía una solicitud POST con los detalles de la enfermedad
+    Then el sistema crea la enfermedad y responde con un código 201 si es exitoso; si ya existe, devuelve un código 400
+
+  Scenario Outline: Asociar una enfermedad a un historial médico
+    Given acceso a la API y permisos para asociar enfermedades
+    When se envía una solicitud POST con los detalles de la asociación
+    Then el sistema crea la asociación y responde con un código 201; si no existen, devuelve un código 404
+
+  Scenario Outline: Crear una nueva vacuna
+    Given acceso a la API y permisos para crear vacunas
+    When se envía una solicitud POST con los detalles de la nueva vacuna
+    Then el sistema crea la vacuna y responde con un código 201 si es exitoso; si ya existe, devuelve un código 400
