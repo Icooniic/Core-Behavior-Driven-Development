@@ -1,0 +1,12 @@
+Feature: Añadir horarios de atención
+  Como veterinario/a o personal autorizado, quiero registrar los horarios de atención de la clínica para que los propietarios sepan cuándo pueden llevar a sus mascotas.
+
+  Scenario Outline: Registro de horarios de atención
+    Given el usuario está autenticado como veterinario/a o personal autorizado
+    When selecciona la opción de añadir horario de atención
+    Then la aplicación muestra un apartado para ingresar el horario
+
+  Scenario Outline: Confirmación de registro de horario
+    Given el usuario está autenticado como veterinario/a o personal autorizado
+    When ingresa su horario de atención
+    Then la aplicación muestra una confirmación del horario listo para ser publicado
