@@ -1,0 +1,17 @@
+Feature: Reestablecer contraseña
+  Como veterinario o propietario de una mascota, quiero tener la capacidad de restablecer mi contraseña en la aplicación para poder acceder a mi cuenta de manera segura.
+
+  Scenario Outline: Solicitud de recuperación de contraseña exitosa
+    Given el usuario se encuentra en la pantalla de recuperación de contraseña luego de dar clic a "¿olvidé mi contraseña?"
+    When ingresa su correo electrónico registrado y hace clic en "enviar"
+    Then se le envía un correo electrónico con un enlace para reestablecer su contraseña
+
+  Scenario Outline: Cambio de contraseña exitoso
+    Given el usuario recibe el correo para reestablecer su contraseña
+    When hace clic en el enlace proporcionado
+    Then se le redirige a una página para crear una nueva contraseña
+
+  Scenario Outline: Correo electrónico no registrado para recuperación de contraseña
+    Given el usuario se encuentra en la pantalla de recuperación de contraseña luego de dar clic a "¿olvidé mi contraseña?"
+    When ingresa un correo electrónico no registrado y hace clic en "enviar"
+    Then se muestra un mensaje de error indicando que ingrese un correo registrado
