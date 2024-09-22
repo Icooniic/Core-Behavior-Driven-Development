@@ -1,0 +1,17 @@
+Feature: Iniciar sesión
+  Como veterinario o propietario de una mascota, quiero poder iniciar sesión en la aplicación utilizando mis credenciales para acceder a las funcionalidades y gestionar la información ingresada.
+
+  Scenario Outline: Inicio de sesión exitoso
+    Given el usuario está en la pantalla de inicio de sesión
+    When ingresa su correo electrónico y contraseña
+    Then accede exitosamente a su cuenta y se redirige a la pantalla de inicio
+
+  Scenario Outline: Datos incorrectos en el inicio de sesión
+    Given el usuario está en la pantalla de inicio de sesión
+    When ingresa un correo electrónico o una contraseña incorrecta
+    Then se muestra un mensaje de error indicando que el correo electrónico o la contraseña están incorrectos
+
+  Scenario Outline: Correo no registrado en el inicio de sesión
+    Given el usuario está en la pantalla de inicio de sesión
+    When intenta iniciar sesión con un correo que no está registrado
+    Then se muestra un mensaje de error indicando que el correo no está registrado
