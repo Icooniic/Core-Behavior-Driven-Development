@@ -1,0 +1,16 @@
+Feature: Visualizar resumen del historial médico
+
+  Scenario Outline: Visualización del resumen del historial médico exitoso
+    Given el usuario está autenticado en la aplicación como veterinario/a o personal autorizado
+    When el usuario requiere el resumen del historial médico para atender a una mascota
+    Then el usuario obtiene la información del historial médico de la mascota, incluyendo vacunas, cirugías, diagnósticos y cualquier otra información relevante
+
+  Scenario Outline: Visualización del resumen del historial médico por orden de fecha exitoso
+    Given el usuario está autenticado en la aplicación como veterinario/a o personal autorizado
+    When el usuario requiere el resumen del historial médico filtrando por orden de fecha para atender a una mascota
+    Then el usuario obtiene la información según la fecha filtrada, del historial médico de la mascota, incluyendo vacunas, cirugías, diagnósticos y cualquier otra información relevante
+
+  Scenario Outline: Validación de la fecha filtrada
+    Given el usuario está autenticado en la aplicación como veterinario/a o personal autorizado
+    When el usuario requiere el resumen del historial médico filtrando por orden de fecha, pero esta no es válida
+    Then la aplicación muestra un mensaje de error indicando que la fecha es errónea y no permite el obtener el resumen de la mascota
