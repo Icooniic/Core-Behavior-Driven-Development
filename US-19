@@ -1,0 +1,11 @@
+Feature: Ver detalles de cada veterinaria
+
+  Scenario Outline: Visualización de detalles de veterinaria
+    Given el usuario está autenticado como propietario/a en la versión gratuita o suscrito en la aplicación
+    When desea visualizar los detalles de una veterinaria específica
+    Then la aplicación muestra información detallada sobre la veterinaria seleccionada
+
+  Scenario Outline: Ver detalles de la veterinaria con filtros de búsqueda
+    Given el usuario está autenticado como propietario/a en la versión gratuita o suscrito en la aplicación
+    When desea ver los detalles de una veterinaria, pero tiene preferencias específicas, como los servicios ofrecidos
+    Then la aplicación permite al usuario aplicar filtros de búsqueda para ver solo las veterinarias que cumplan con sus criterios específicos
