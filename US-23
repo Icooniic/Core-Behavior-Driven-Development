@@ -1,0 +1,12 @@
+Feature: Añadir servicios ofrecidos
+  Como veterinario/a o personal autorizado, quiero registrar los servicios ofrecidos por la clínica para que los propietarios conozcan las opciones disponibles.
+
+  Scenario Outline: Registro de la información de servicios
+    Given el usuario está autenticado como veterinario/a o personal autorizado
+    When selecciona la opción para añadir servicios
+    Then la aplicación proporciona un formulario para ingresar información detallada
+
+  Scenario Outline: Actualización de servicios existentes
+    Given el usuario está autenticado como veterinario/a o personal autorizado
+    When necesita actualizar información sobre los servicios
+    Then la aplicación permite editar la información existente y guardar los cambios
