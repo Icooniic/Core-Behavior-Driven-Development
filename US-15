@@ -1,0 +1,17 @@
+Feature: Suscribirse a un plan
+
+  Scenario Outline: Suscripción a un plan de pago exitoso
+    Given el usuario está en la versión gratuita de la aplicación como propietario/a de mascota sin suscripción
+    When el usuario quiere suscribirse a un plan con los beneficios que necesite
+    Then el usuario completa un formulario para realizar el pago correspondiente y obtiene su suscripción
+
+  Scenario Outline: Validación de los datos de pago
+    Given el usuario está en la versión gratuita de la aplicación como propietario/a de mascota sin suscripción
+    When el usuario quiere suscribirse a un plan con los beneficios que necesite, pero los datos no son completados o erróneos
+    Then el sistema muestra un mensaje indicando que hubo un error en el procedimiento
+
+  Scenario Outline: Usuario paga la suscripción con éxito
+    Given el propietario/a está autenticado y suscrito a un plan de pago de la aplicación
+    When el usuario quiere acceder a los nuevos beneficios del plan
+    Then el sistema mostrará las nuevas funciones y beneficios según el plan que eligió el usuario
+
