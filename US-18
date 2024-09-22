@@ -1,4 +1,5 @@
 Feature: Añadir valoraciones y comentarios
+Como propietario/a o autenticado y suscrito a un plan, quiero poder realizar comentarios y valoraciones, para calificar la atención de cada centro de atención  
 
   Scenario Outline: Comentario añadido con éxito
     Given el usuario está autenticado como propietario/a en la versión gratuita o suscrito en la aplicación
