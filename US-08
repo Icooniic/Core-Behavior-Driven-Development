@@ -1,12 +1,24 @@
-Feature: Actualizar consulta médica
-  Como veterinario, quiero poder actualizar los datos de una consulta médica para corregir o agregar información.
+Feature: Editar información de la mascota
 
-  Scenario Outline: Actualización exitosa de una consulta médica
-    Given el veterinario está visualizando el historial médico de una mascota
-    When selecciona una consulta y edita los datos (diagnóstico, tratamiento)
-    Then los cambios se guardan exitosamente y el historial médico se actualiza
+  Scenario Outline: Acceso al perfil de la mascota para editar
+    Given el usuario se encuentra en el perfil de la mascota que desea editar
+    When selecciona la opción de "<acción>"
+    Then aparece el formulario de edición de perfil
 
-  Scenario Outline: Actualización fallida por datos incompletos
-    Given el veterinario está visualizando el historial médico de una mascota
-    When selecciona una consulta y elimina datos importantes
-    Then se muestra un mensaje de error indicando que no se puede actualizar con datos incompletos
+    Examples:
+      | acción            |
+      | actualizar información |
+  
+  Scenario Outline: Edición de la información de la mascota
+    Given el propietario de la mascota se encuentra en el formulario
+    When modifica la información de su mascota y selecciona la opción "<acción>"
+    Then muestra un mensaje que la información del perfil de la mascota ha sido actualizada correctamente
+
+    Examples:
+      | acción   |
+      | guardar  |
+  
+  Scenario Outline: Validación de datos al editar
+    Given que el propietario de la mascota se encuentra en el formulario de edición de perfil
+    When intenta guardar cambios con un campo obligatorio sin completar
+    Then se muestra un mensaje de error indicando que es necesario completar todos los campos obligatorios antes de guardar los cambios
