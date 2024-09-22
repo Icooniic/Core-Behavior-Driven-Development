@@ -1,4 +1,5 @@
 Feature: Ver reseñas y evaluación
+Como propietario/a o autenticado y suscrito a un plan, quiero visualizar las reseñas de cada veterinaria, para facilitar el proceso de selección de cada centro  
 
   Scenario Outline: Visualización de reseñas y evaluación
     Given el usuario está autenticado como propietario/a en la versión gratuita o suscrito en la aplicación
