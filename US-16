@@ -1,0 +1,17 @@
+Feature: Cambiar de plan
+
+  Scenario Outline: Mejorar versión del plan exitoso
+    Given el usuario está autenticado en la aplicación como propietario/a suscrito
+    When desea mejorar la versión de su plan actual y acceder a mayores beneficios
+    Then el usuario completa un formulario para realizar el pago correspondiente y obtiene su nueva suscripción
+
+  Scenario Outline: Desafiliación del plan actual
+    Given el usuario está autenticado en la aplicación como propietario/a suscrito
+    When desea desafiliarse o bajar la versión de su plan actual y no acceder a mayores beneficios
+    Then el usuario completa un formulario para realizar la desafiliación y obtiene su nueva versión solicitada
+
+  Scenario Outline: Validación de los datos del formulario
+    Given el usuario está autenticado en la aplicación como propietario/a suscrito
+    When el usuario quiere completar el formulario para mejorar o desafiliarse de su plan, pero los datos no son llenados correctamente
+    Then el sistema muestra un mensaje indicando que hubo un error en el procedimiento
+
