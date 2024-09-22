@@ -1,4 +1,5 @@
 Feature: Visualizar resumen del historial médico
+Como veterinario/a o personal autorizado de la clínica veterinaria, quiero poder visualizar el resumen del historial médico de cada mascota, para considerar sus antecedentes en la atención de la cita
 
   Scenario Outline: Visualización del resumen del historial médico exitoso
     Given el usuario está autenticado en la aplicación como veterinario/a o personal autorizado
