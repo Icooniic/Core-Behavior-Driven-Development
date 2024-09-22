@@ -1,0 +1,11 @@
+Feature: Ver reseñas y evaluación
+
+  Scenario Outline: Visualización de reseñas y evaluación
+    Given el usuario está autenticado como propietario/a en la versión gratuita o suscrito en la aplicación
+    When desea visualizar las reseñas y evaluaciones de una veterinaria específica
+    Then la aplicación muestra una lista de reseñas y evaluaciones dejadas por otros usuarios sobre la veterinaria seleccionada
+
+  Scenario Outline: Ver reseñas y evaluaciones con filtros de búsqueda
+    Given el usuario está autenticado como propietario/a en la versión gratuita o suscrito en la aplicación
+    When desea visualizar las reseñas y evaluaciones de una veterinaria, pero tiene preferencias específicas, como la búsqueda de reseñas positivas o negativas
+    Then la aplicación permite al usuario aplicar filtros de búsqueda para ver solo las reseñas que cumplan con sus criterios específicos, como la puntuación dada por otros usuarios
