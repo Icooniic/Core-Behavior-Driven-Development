@@ -1,0 +1,13 @@
+Feature: Agregar consulta médica
+  Como veterinario, quiero registrar una nueva consulta médica para actualizar el historial médico de una mascota.
+
+  Scenario Outline: Registro de consulta médica exitoso
+    Given el veterinario está en el perfil de una mascota
+    When selecciona la opción de agregar consulta médica
+    And completa los detalles de la consulta (fecha, diagnóstico, tratamiento)
+    Then la consulta se registra exitosamente y se actualiza el historial médico de la mascota
+
+  Scenario Outline: Registro fallido por campos vacíos
+    Given el veterinario está en el perfil de una mascota
+    When intenta registrar una consulta sin llenar todos los campos obligatorios
+    Then se muestra un mensaje de error pidiendo completar los campos faltantes
