@@ -1,0 +1,7 @@
+Feature: Cerrar sesión
+  Como propietario de una mascota o administrador de una clínica veterinaria, quiero cerrar sesión en la aplicación para garantizar la seguridad de mi información.
+
+  Scenario Outline: Cierre de sesión exitoso
+    Given el usuario está autenticado en la aplicación
+    When selecciona la opción "Cerrar sesión" desde la pantalla de inicio
+    Then se cierra exitosamente la sesión del usuario y se redirige a la pantalla de inicio de sesión
