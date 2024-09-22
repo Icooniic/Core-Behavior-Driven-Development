@@ -1,0 +1,7 @@
+Feature: Endpoint Veterinary Clinic
+  Como administrador de la aplicación, quiero gestionar la información de las clínicas veterinarias a través de la API para mantener un registro actualizado.
+
+  Scenario Outline: Crear una nueva clínica veterinaria
+    Given acceso a la API de clínicas veterinarias
+    When se envía una solicitud POST con los detalles de la nueva clínica
+    Then el sistema crea la clínica y responde con un código 201; si ya existe, devuelve un código 400
