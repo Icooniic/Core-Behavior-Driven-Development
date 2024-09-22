@@ -1,0 +1,17 @@
+Feature: Endpoint User
+  Como administrador del sistema, quiero gestionar la información de los usuarios a través de la API para asegurar un registro adecuado.
+
+  Scenario Outline: Crear un nuevo usuario
+    Given un usuario desea registrarse en la plataforma
+    When envía una solicitud POST con los detalles del nuevo usuario
+    Then el sistema verifica la disponibilidad del correo electrónico y crea el nuevo usuario, devolviendo los detalles con un código 201
+
+  Scenario Outline: Registrar un veterinario
+    Given un veterinario desea registrarse en la plataforma
+    When envía una solicitud POST con los detalles del veterinario y el ID de usuario
+    Then el sistema verifica y registra al veterinario, devolviendo los detalles con un código 201
+
+  Scenario Outline: Registrar un propietario de mascotas
+    Given un propietario de mascotas desea registrarse en la plataforma
+    When envía una solicitud POST con los detalles del propietario y el ID de usuario
+    Then el sistema verifica y registra al propietario, devolviendo los detalles con un código 201
