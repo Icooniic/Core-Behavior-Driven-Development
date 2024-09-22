@@ -1,13 +1,24 @@
-Feature: Agregar consulta médica
-  Como veterinario, quiero registrar una nueva consulta médica para actualizar el historial médico de una mascota.
+Feature: Ver listado de mis mascotas
 
-  Scenario Outline: Registro de consulta médica exitoso
-    Given el veterinario está en el perfil de una mascota
-    When selecciona la opción de agregar consulta médica
-    And completa los detalles de la consulta (fecha, diagnóstico, tratamiento)
-    Then la consulta se registra exitosamente y se actualiza el historial médico de la mascota
+  Scenario Outline: Listado de mascotas
+    Given el propietario de la mascota se encuentra en la pantalla inicial de la aplicación
+    When navega a la sección de "<sección>"
+    Then se muestra un listado de todas sus mascotas registradas, incluyendo su nombre y foto
 
-  Scenario Outline: Registro fallido por campos vacíos
-    Given el veterinario está en el perfil de una mascota
-    When intenta registrar una consulta sin llenar todos los campos obligatorios
-    Then se muestra un mensaje de error pidiendo completar los campos faltantes
+    Examples:
+      | sección       |
+      | Mis Mascotas  |
+  
+  Scenario Outline: Usuario sin mascotas registradas
+    Given el propietario de la mascota se encuentra en la pantalla inicial de la aplicación
+    When el usuario intenta acceder al listado de sus mascotas, pero no tiene ninguna mascota registrada
+    Then se muestra un mensaje de error indicando que el Usuario no tiene ninguna mascota registrada
+
+  Scenario Outline: Detalles de mascota seleccionada
+    Given el propietario de la mascota se encuentra en la pantalla de “<sección>”
+    When selecciona una mascota del listado
+    Then se muestra una pantalla con los detalles completos de la mascota, incluyendo su nombre, foto, especie, raza, edad, entre otros datos importantes
+
+    Examples:
+      | sección       |
+      | Mis Mascotas  |
