@@ -1,4 +1,5 @@
 Feature: Visualización de perfil de veterinarias
+  Como propietario de una mascota, quiero poder visualizar el perfil de las veterinarias para tomar decisiones informadas sobre su atención.
 
   Scenario Outline: Visualización de perfil de la veterinaria
     Given el usuario está autenticado como propietario/a en la versión gratuita o suscrito
