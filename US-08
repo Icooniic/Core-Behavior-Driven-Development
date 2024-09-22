@@ -1,0 +1,12 @@
+Feature: Actualizar consulta médica
+  Como veterinario, quiero poder actualizar los datos de una consulta médica para corregir o agregar información.
+
+  Scenario Outline: Actualización exitosa de una consulta médica
+    Given el veterinario está visualizando el historial médico de una mascota
+    When selecciona una consulta y edita los datos (diagnóstico, tratamiento)
+    Then los cambios se guardan exitosamente y el historial médico se actualiza
+
+  Scenario Outline: Actualización fallida por datos incompletos
+    Given el veterinario está visualizando el historial médico de una mascota
+    When selecciona una consulta y elimina datos importantes
+    Then se muestra un mensaje de error indicando que no se puede actualizar con datos incompletos
