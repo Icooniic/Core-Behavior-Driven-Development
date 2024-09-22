@@ -1,0 +1,17 @@
+Feature: Registro de cuenta
+  Como veterinario o propietario de una mascota, quiero registrarme en la aplicación para acceder a sus funcionalidades.
+
+  Scenario Outline: Registro exitoso
+    Given el usuario está en la pantalla de registro
+    When completa los campos requeridos
+    Then la cuenta se crea exitosamente y se redirige a la pantalla de inicio de sesión
+
+  Scenario Outline: Datos incompletos en el registro
+    Given el usuario está en la pantalla de registro
+    When intenta registrarse con datos incompletos
+    Then se muestra un mensaje de error y se le pide que complete los campos vacíos
+
+  Scenario Outline: Correo electrónico en uso
+    Given el usuario está en la pantalla de registro
+    When intenta registrarse con un correo electrónico que está en uso
+    Then se muestra un mensaje de error que indica que el correo ya está registrado en la aplicación
