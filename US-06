@@ -1,17 +1,12 @@
-Feature: Registrar mascota
-  Como propietario de una mascota, quiero crear un perfil para cada una de mis mascotas para mantener un registro organizado de sus datos.
+Feature: Visualizar historial médico de mascotas
+  Como veterinario, quiero visualizar el historial médico de una mascota para revisar consultas pasadas y diagnósticos.
 
-  Scenario Outline: Agregar una nueva mascota
-    Given el propietario de la mascota se encuentra en la página principal
-    When selecciona la opción de agregar una nueva mascota
-    Then se abre un formulario donde puede ingresar el nombre, la raza, la edad y el peso
+  Scenario Outline: Visualizar historial médico exitosamente
+    Given el veterinario se encuentra en el perfil de una mascota
+    When selecciona la opción de ver historial médico
+    Then se muestra una lista con las consultas anteriores, diagnósticos y tratamientos aplicados
 
-  Scenario Outline: Guardar cambios de la mascota
-    Given el propietario de la mascota ha ingresado la información en el formulario de la mascota
-    When guarda los cambios realizados
-    Then la información de la mascota se actualiza en el sistema y se muestra un mensaje de confirmación
-
-  Scenario Outline: Validación de campos obligatorios
-    Given el propietario se encuentra en el formulario de información de la mascota
-    When intenta guardar los cambios sin completar todos los campos obligatorios
-    Then se muestra un mensaje de error indicando que debe llenar los campos requeridos
+  Scenario Outline: Historial médico sin registros
+    Given el veterinario se encuentra en el perfil de una mascota
+    When selecciona la opción de ver historial médico
+    Then se muestra un mensaje indicando que no hay consultas registradas para la mascota
